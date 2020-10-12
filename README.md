@@ -2,7 +2,8 @@
 
   <img src="./header.png" width="600px" />
   <h1 align="center">Happy</h1>
-  <p align="center">Aplicação que conecta pessoas aos orfanatos de suas cidades.</p>
+  <p>Platform to connect you and the nearest orphanages in your locale.</p>
+  <p>This application was developed during  Rocketseat Next Level Week</p>
 
   <span>
     <a href="tech">Technologies</a> |
