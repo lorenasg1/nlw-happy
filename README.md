@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="./header.png" width="100%" />
+  <img src="./header.png" width="600px" />
   <h1 align="center">Happy</h1>
   <p>Platform to connect you and the nearest orphanages in your locale.</p>
   <p>This application was developed during  Rocketseat Next Level Week.</p>
