@@ -59,6 +59,13 @@ export const OrphanageDetails = styled.div`
 export const OrphanageDetailsContent = styled.div`
   padding: 80px;
 
+  h1 {
+    color: #4d6f80;
+    font-size: 54px;
+    line-height: 54px;
+    margin-bottom: 8px;
+  }
+
   p {
     line-height: 28px;
     color: #5c8599;
@@ -70,6 +77,11 @@ export const OrphanageDetailsContent = styled.div`
     background: #e6f7fb;
     border: 1px solid #b3dae2;
     border-radius: 20px;
+  }
+
+  .map-container footer {
+    padding: 20px 0;
+    text-align: center;
   }
 
   .map-container footer a {
@@ -111,6 +123,11 @@ export const OrphanageDetailsContent = styled.div`
     line-height: 28px;
   }
 
+  .open-details div svg {
+    display: block;
+    margin-bottom: 20px;
+  }
+
   .open-details div.hour {
     background: linear-gradient(149.97deg, #e6f7fb 8.13%, #ffffff 92.67%);
     border: 1px solid #b3dae2;
@@ -121,6 +138,12 @@ export const OrphanageDetailsContent = styled.div`
     background: linear-gradient(154.16deg, #edfff6 7.85%, #ffffff 91.03%);
     border: 1px solid #a1e9c5;
     color: #37c77f;
+  }
+
+  .open-details div.open-on-weekends.not-open {
+    background: linear-gradient(154.16deg, #fcf0f4 7.85%, #ffffff 91.03%);
+    border: 1px solid #ff669d;
+    color: #ff669d;
   }
 
   button.contact-button {
