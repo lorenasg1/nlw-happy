@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+// import { Form as unForm } from '@unform/web';
 
 export const Container = styled.div`
   display: flex;
@@ -19,6 +20,12 @@ export const Form = styled.form`
   padding: 64px 80px;
 
   overflow: hidden;
+
+  .leaflet-container {
+    margin-bottom: 40px;
+    border: 1px solid #d3e2e5;
+    border-radius: 20px;
+  }
 
   fieldset {
     border: 0;
@@ -82,13 +89,33 @@ export const Form = styled.form`
     line-height: 28px;
   }
 
-  .input-block .new-image {
+  .input-block .images-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+  }
+
+  .input-block .images-container img {
     width: 100%;
-    height: 64px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .input-block .new-image {
+    height: 96px;
     background: #f5f8fa;
     border: 1px dashed #96d2f0;
     border-radius: 20px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input-block input[type='file'] {
+    visibility: hidden;
   }
 
   .input-block .button-select {
