@@ -1,11 +1,12 @@
 <div align="center">
 
-  <img src="./header.png" width="600px" />
+  <img src="./.github/header.png" width="600px" />
   <h1 align="center">Happy</h1>
-  <p>Platform to connect you and the nearest orphanages in your locale.</p>
+  <p>A Platform to connect you and the institutional shelters in your locality.</p>
   <p>This application was developed during  Rocketseat Next Level Week.</p>
 
   <span>
+    <a href="project">Project</a> |
     <a href="tech">Technologies</a> |
     <a href="features">Features</a> |
     <a href="install">Install</a> |
@@ -14,14 +15,57 @@
   </span>
 </div>
 
+<h2 id="project">Project</h2>
+
+<p>
+Happy is an application to connect people and institutional shelters. Find one, pay a visit, and make the world a better place.
+</p>
+<p>
+The NLW focused on children's shelters, but as my locality does not have this type of institution, I opted to open the scope and make it available also for shelters for the elderly.
+</p>
+<p>
+I used to visit the retirement home in my city. The elderly really appreciate it when people go visit and chat with them.
+</p>
+
+
 <h2 id="tech">Technologies</h2>
 <ul>
   <li>React</li>
   <li>TypeScript</li>
+  <li>Leaflet</li>
   <li>MapBox</li>
 </ul>
 
 <h2 id="features">Features</h2>
 <ul>
-  
+  <li>Find institutional shelters for children or the elderly on the map;</li>
+  <li>Add shelters to the map;</li>
+  <li>See detailed information about the shelter and instructions for visiting;</li>
+  <li>Contact via whatsapp message;</li>
+  <li>Access routes via Google Maps;</li>
 </ul>
+
+<h2 id="install">Install</h2>
+
+```shell
+# clone the project
+git clone
+
+# install dependencies
+yarn
+
+```
+
+
+<h2 id="how">How to use</h2>
+
+```shell
+# start the project
+yarn start
+```
+
+<h2 id="licence">Licence</h2>
+
+<p>
+This project is under <a href="">MIT </a>licence.
+</p>
