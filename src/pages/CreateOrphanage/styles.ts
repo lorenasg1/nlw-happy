@@ -53,7 +53,7 @@ export const Form = styled.form`
   }
 
   .input-block label {
-    display: flex;
+    display: block;
     color: #8fa7b3;
     margin-bottom: 8px;
     line-height: 24px;
@@ -135,6 +135,11 @@ export const Form = styled.form`
     background: #edfff6;
     border: 1px solid #a1e9c5;
     color: #37c77f;
+  }
+  .input-block .button-select button.active-red {
+    background: #fcf0f4;
+    border: 1px solid #ff669d;
+    color: #ff669d;
   }
 
   .input-block .button-select button:first-child {

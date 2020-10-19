@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState, ChangeEvent } from 'react';
+import React, { FormEvent, useState, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
@@ -16,6 +16,7 @@ const CreateOrphanage = () => {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
@@ -35,7 +36,7 @@ const CreateOrphanage = () => {
 
     setImages(selectedImages);
 
-    const selectedImagesPreview = selectedImages.map((image) => {
+    const selectedImagesPreview = selectedImages.map(image => {
       return URL.createObjectURL(image);
     });
 
@@ -53,19 +54,18 @@ const CreateOrphanage = () => {
     data.append('about', about);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
+    data.append('whatsapp', whatsapp);
     data.append('instructions', instructions);
     data.append('opening_hours', opening_hours);
     data.append('open_on_weekends', String(open_on_weekends));
 
-    images.forEach((image) => {
+    images.forEach(image => {
       data.append('images', image);
     });
 
     await api.post('/orphanages', data);
 
-    alert('Cadastro realizado com sucesso!');
-
-    history.push('/app');
+    history.push('/orphanages/create/success');
   };
 
   return (
@@ -75,7 +75,7 @@ const CreateOrphanage = () => {
       <main>
         <Form onSubmit={handleSubmit}>
           <fieldset>
-            <legend>Dados</legend>
+            <legend>Dados da casa de acolhimento</legend>
 
             <Map
               center={[-6.2602637, -36.5337723]}
@@ -97,31 +97,42 @@ const CreateOrphanage = () => {
             </Map>
 
             <div className="input-block">
-              <label htmlFor="name">Nome</label>
-              <input
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
+              <label htmlFor="name">
+                Nome
+                <input
+                  id="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
+              </label>
             </div>
 
             <div className="input-block">
               <label htmlFor="about">
                 Sobre <span>Máximo de 300 caracteres</span>
+                <textarea
+                  id="about"
+                  maxLength={300}
+                  value={about}
+                  onChange={e => setAbout(e.target.value)}
+                />
               </label>
-              <textarea
-                id="about"
-                maxLength={300}
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="whatsapp">Número do WhatsApp</label>
+              <input
+                id="whatsapp"
+                maxLength={20}
+                value={whatsapp}
+                onChange={e => setWhatsapp(e.target.value)}
               />
             </div>
 
             <div className="input-block">
               <label htmlFor="images">Fotos</label>
-
-              <div className="images-container">
-                {previewImages.map((image) => {
+              <div id="images" className="images-container">
+                {previewImages.map(image => {
                   return <img key={image} src={image} alt={name} />;
                 })}
 
@@ -147,7 +158,7 @@ const CreateOrphanage = () => {
               <textarea
                 id="instructions"
                 value={instructions}
-                onChange={(e) => setInstructions(e.target.value)}
+                onChange={e => setInstructions(e.target.value)}
               />
             </div>
 
@@ -156,12 +167,12 @@ const CreateOrphanage = () => {
               <input
                 id="opening_hours"
                 value={opening_hours}
-                onChange={(e) => setOpeningHours(e.target.value)}
+                onChange={e => setOpeningHours(e.target.value)}
               />
             </div>
 
             <div className="input-block">
-              <label htmlFor="open_on_weekends">Atende fim de semana</label>
+              <label htmlFor="open_on_weekends">Atende fim de semana?</label>
 
               <div className="button-select">
                 <button
@@ -173,7 +184,7 @@ const CreateOrphanage = () => {
                 </button>
                 <button
                   type="button"
-                  className={!open_on_weekends ? 'active' : ''}
+                  className={!open_on_weekends ? 'active-red' : ''}
                   onClick={() => setOpenOnWeekends(false)}
                 >
                   Não
