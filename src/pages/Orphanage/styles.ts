@@ -146,7 +146,7 @@ export const OrphanageDetailsContent = styled.div`
     color: #ff669d;
   }
 
-  button.contact-button {
+  a.contact-button {
     margin-top: 64px;
 
     width: 100%;
@@ -157,6 +157,7 @@ export const OrphanageDetailsContent = styled.div`
     border-radius: 20px;
     color: #ffffff;
     font-weight: 800;
+    text-decoration: none;
 
     display: flex;
     justify-content: center;
@@ -165,11 +166,11 @@ export const OrphanageDetailsContent = styled.div`
     transition: background-color 0.2s;
   }
 
-  button.contact-button svg {
+  a.contact-button svg {
     margin-right: 16px;
   }
 
-  button.contact-button:hover {
+  a.contact-button:hover {
     background: #36cf82;
   }
 `;

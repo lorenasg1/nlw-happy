@@ -13,6 +13,7 @@ import { useParams } from 'react-router-dom';
 interface Orphanage {
   name: string;
   about: string;
+  whatsapp: string;
   instructions: string;
   latitude: number;
   longitude: number;
@@ -34,7 +35,7 @@ const Orphanage = () => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    api.get(`orphanages/${params.id}`).then((response) => {
+    api.get(`orphanages/${params.id}`).then(response => {
       setOrphanage(response.data);
     });
   }, [params.id]);
@@ -132,10 +133,15 @@ const Orphanage = () => {
               )}
             </div>
 
-            <button type="button" className="contact-button">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-button"
+              href={`https://wa.me/${orphanage.whatsapp}`}
+            >
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button>
+            </a>
           </OrphanageDetailsContent>
         </OrphanageDetails>
       </main>
