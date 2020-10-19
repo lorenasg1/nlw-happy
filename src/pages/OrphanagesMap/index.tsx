@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FiArrowRight, FiPlus } from 'react-icons/fi';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
+import { Link } from 'react-router-dom';
 import mapMarkerImg from '../../assets/images/map-marker.svg';
 import mapIcon from '../../utils/mapIcon';
 
 import { Container, AddOrphanage } from './styles';
-import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 interface Orphanage {
@@ -16,11 +16,11 @@ interface Orphanage {
   longitude: number;
 }
 
-const OrphanagesMap = () => {
+const OrphanagesMap: React.FC = props => {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
-    api.get('orphanages').then((response) => {
+    api.get('orphanages').then(response => {
       setOrphanages(response.data);
     });
   }, []);
@@ -30,14 +30,22 @@ const OrphanagesMap = () => {
       <aside>
         <header>
           <img src={mapMarkerImg} alt="" />
-
-          <h2>Escolha um orfanato no mapa</h2>
-          <p>Muitas crianças estão esperando a sua visita :)</p>
+          <div>
+            <strong>Currais Novos</strong>
+            <span>Rio Grande do Norte</span>
+          </div>
         </header>
 
+        <h2>Escolha uma casa de acolhimento no mapa</h2>
+        <p>Muitas crianças e idosos estão esperando a sua visita :)</p>
+
         <footer>
-          <strong>Currais Novos</strong>
-          <span>Rio Grande do Norte</span>
+          <p>
+            Encontradas:{' '}
+            {orphanages.length > 0
+              ? `${orphanages.length} casas de acolhimento`
+              : 'Nenhuma casa de acolhimento ainda.'}
+          </p>
         </footer>
       </aside>
 
@@ -50,7 +58,7 @@ const OrphanagesMap = () => {
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
         />
 
-        {orphanages.map((orphanage) => {
+        {orphanages.map(orphanage => {
           return (
             <Marker
               key={orphanage.id}

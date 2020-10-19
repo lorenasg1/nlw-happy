@@ -9,24 +9,39 @@ export const Container = styled.div`
   display: flex;
 
   aside {
-    width: 440px;
+    width: 400px;
     background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
     padding: 5rem;
+
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    header {
+      display: flex;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+
+        strong {
+          display: flex;
+        }
+      }
+    }
 
     h2 {
       font-size: 3rem;
       font-weight: 800;
       line-height: 2.625rem;
       margin-top: 4rem;
-    }
+    }s
 
     p {
+
       line-height: 1.75rem;
-      margin-top: 1.5rem;
     }
 
     footer {
@@ -34,8 +49,15 @@ export const Container = styled.div`
       flex-direction: column;
       line-height: 1.5rem;
 
-      strong {
-        font-weight: 800;
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        font-size: 1.25rem;
+        list-style: none;
+        line-height: 1.8rem;
       }
     }
   }
@@ -65,8 +87,9 @@ export const Container = styled.div`
     width: 2.5rem;
     height: 2.5rem;
     background: #15c3d6;
-    box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
+    /* box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16); */
     border-radius: 12px;
+    padding: 0.5rem;
 
     display: flex;
     justify-content: center;
