@@ -6,12 +6,12 @@
   <p>This application was developed during  Rocketseat Next Level Week.</p>
 
   <span>
-    <a href="project">Project</a> |
-    <a href="tech">Technologies</a> |
-    <a href="features">Features</a> |
-    <a href="install">Install</a> |
-    <a href="use">How to use</a> |
-    <a href="license">License</a> |
+    <a href="#project">Project</a> |
+    <a href="#tech">Technologies</a> |
+    <a href="#features">Features</a> |
+    <a href="#install">Install</a> |
+    <a href="#use">How to use</a> |
+    <a href="#license">License</a> |
   </span>
 </div>
 
