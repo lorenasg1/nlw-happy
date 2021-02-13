@@ -57,7 +57,7 @@ yarn
 ```
 
 
-<h2 id="how">How to use</h2>
+<h2 id="use">How to use</h2>
 
 ```shell
 # start the project
@@ -67,5 +67,5 @@ yarn start
 <h2 id="licence">Licence</h2>
 
 <p>
-This project is under <a href="">MIT </a>licence.
+This project is under <a href="">MIT</a> licence.
 </p>
