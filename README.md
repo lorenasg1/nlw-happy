@@ -1,7 +1,6 @@
 <div align="center">
-
-  <img src="./.github/header.png" width="600px" />
-  <h1 align="center">Happy</h1>
+  <img src="./.github/header.png" width="90%" />
+  <h1>Happy</h1>
   <p>A Platform to connect you and the institutional shelters in your locality.</p>
   <p>This application was developed during  Rocketseat Next Level Week.</p>
 
